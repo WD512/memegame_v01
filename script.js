@@ -6,7 +6,6 @@ let timerInterval;
 function startGame() {
     document.getElementById("timer").innerText = `Time: ${timer}`;
     timerInterval = setInterval(updateTimer, 1000);
-    // Add any other game initialization logic here
     console.log("Game started");
 }
 
@@ -41,4 +40,3 @@ document.getElementById("restart-button").addEventListener("click", restartGame)
 
 // Start the game when the page loads
 window.onload = startGame;
-
