@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clicker Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Your Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="game-container">
-        <div id="scoreboard">Score: 0</div>
-        <div id="timer">Time: 30</div>
-        <div id="target"></div>
+        <!-- Game content here -->
+        <div id="grid"></div>
     </div>
-    <div id="side-panel">
-        <button id="start-button">Start Game</button>
-        <button id="restart-button">Restart Game</button>
-        <div id="top-scores">
-            <h3>Top 10 Scores</h3>
-            <div id="score-list"></div>
-        </div>
-        <div id="name-input">
-            <label for="player-name">Enter Your Name or Solana Address (1-100 characters):</label>
-            <input type="text" id="player-name" maxlength="100" placeholder="Enter 1 to 100 characters">
-            <button id="submit-name">Submit</button>
+    <!-- Modal for name entry -->
+    <div id="name-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Enter your name:</p>
+            <input type="text" id="player-name" placeholder="Your Name">
+            <button id="restart-button">Restart</button>
         </div>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
