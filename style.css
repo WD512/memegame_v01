@@ -1,88 +1,117 @@
-/* General game styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff;
 }
 
 #game-container {
-    width: 400px;
-    height: 400px;
-    background-color: #ffffff;
-    border: 2px solid #333;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 70vw;
+    height: 90vh;
+    background-color: #d3d3d3;
+    border: 2px solid #333;
+    overflow: hidden;
+    display: block;
+    background-image: 
+        linear-gradient(to right, #ccc 1px, transparent 1px),
+        linear-gradient(to bottom, #ccc 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
-#grid {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 1px;
-    background-color: #ccc;
+#side-panel {
+    width: 30vw;
+    height: 90vh;
+    background-color: #f0f8ff;
+    border-left: 2px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#target {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+#scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #timer {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
-/* Modal styles */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hidden {
-    display: none;
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 8px;
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-button {
+#start-button, #restart-button {
+    font-size: 20px;
     padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+    background-color: #4caf50;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+#start-button:hover, #restart-button:hover {
+    background-color: #45a049;
 }
+
+#restart-button {
+    display: none;
+}
+
+#top-scores {
+    font-size: 18px;
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 1px solid #333;
+}
+
+#score-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.score-entry {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.score-entry span {
+    width: 33%;
+    text-align: center;
+}
+
+#name-input {
+    display: none;
+    margin-top: 20px;
+}
+
+#name-input input {
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+}
+
